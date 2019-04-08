@@ -20,6 +20,57 @@ Example for printShape("Diamond", 5, "*");
  ***
   * 
 */
+//Function Definition
 function printShape(shape, height, character) {
+
+  switch( shape )
+  {
+    case 'Squer':
+    for (let i = 0; i <= height; i++)
+    {
+      console.log(character.repeat(height));
+    }
+    break;
+
+    case 'Triangle':
+    let l = height
+    for (let i = 0; i <= height; i++)
+    {
+      console.log(character.repeat(height - l));
+      l--;
+    }
+    break;
+    case 'Diamond':
+    //To print first half of my Diamond
+    
+    let myArr = []
+    let j = height;
+    for(let i = 0; i <= height; i++)
+    {
+      rightSide = ' '.repeat(j)
+      leftSide = character.repeat(1 + i * 2)
+      console.log(rightSide + leftSide)
+      j--;
+    }
+    //To print the second half of my diomond
+    let k = 0;
+    for(let i = height; i >=0; i--)
+    {
+      rightSide = ' '.repeat(k);
+      leftSide = character.repeat(1 + i * 2);
+      console.log(rightSide + leftSide);
+      k++;
+    }
+    break;
+  }
   
 }
+
+//Main
+//Declarations
+let myShape = 'Diamond';
+let myHeight = 5;
+let char = '#';
+
+//Process
+printShape(myShape, myHeight, char);
